@@ -1,8 +1,7 @@
-import 'Styles/main.scss';
-import Vue from 'vue';
-import HelloWorld from 'Components/HelloWorld.vue';
+import 'Styles/main.scss'
+import Vue from 'vue'
 
 new Vue({
-  render: createElement => createElement(HelloWorld),
-  el: '#app'
-});
+  el: '#app',
+  render: h => h('div'),
+})
