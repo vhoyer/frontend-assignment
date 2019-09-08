@@ -1,5 +1,15 @@
 <template>
+  <RouterLink
+    v-if="$attrs.to"
+    :tag="tag"
+    v-on="$listeners"
+    v-bind="$attrs"
+    @click="$emit('click')"
+  >
+    <slot />
+  </RouterLink>
   <component
+    v-else
     :is="tag"
     v-on="$listeners"
     v-bind="$attrs"

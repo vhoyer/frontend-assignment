@@ -1,5 +1,5 @@
 import UILink from './UILink.vue'
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, RouterLinkStub } from '@vue/test-utils'
 
 describe('UI > UILink', () => {
   let wrapper
@@ -8,6 +8,9 @@ describe('UI > UILink', () => {
     wrapper = shallowMount(UILink, {
       slots: {
         default: 'Why all my mock texts talk about batman?',
+      },
+      stubs: {
+        RouterLink: RouterLinkStub,
       },
     })
   })
@@ -18,6 +21,7 @@ describe('UI > UILink', () => {
 
   it('render an anchor by default', () => {
     expect(wrapper.is('a')).toBe(true)
+    expect(wrapper.find(RouterLinkStub).exists()).toBe(false)
   })
 
   it('renders the text passed in the default slot', () => {
@@ -43,6 +47,33 @@ describe('UI > UILink', () => {
 
     it('renders that prop into the result element', () => {
       expect(wrapper.attributes('aria-label')).toBe('Does this help?')
+    })
+  })
+
+  describe('when a `to` prop is passed', () => {
+    beforeEach(() => {
+      wrapper.setProps({
+        to: '/path/to/somewhere',
+      })
+    })
+
+    it('renders an RouterLink', () => {
+      expect(wrapper.find(RouterLinkStub).is('a')).toBe(true)
+      expect(wrapper.find(RouterLinkStub).exists()).toBe(true)
+    })
+
+    describe('when a tag is passed', () => {
+      beforeEach(() => {
+        wrapper.setProps({
+          tag: 'button',
+        })
+      })
+
+      it('renders an RouterLink', () => {
+        expect(wrapper.find(RouterLinkStub).is('a')).toBe(false)
+        expect(wrapper.find(RouterLinkStub).is('button')).toBe(true)
+        expect(wrapper.find(RouterLinkStub).exists()).toBe(true)
+      })
     })
   })
 
