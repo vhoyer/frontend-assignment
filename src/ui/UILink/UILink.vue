@@ -25,11 +25,6 @@ export default {
     tag: {
       type: String,
       default: 'a',
-      validator: tag => [
-        'a',
-        'button',
-        'router-link',
-      ].includes(tag),
     },
   },
 }
