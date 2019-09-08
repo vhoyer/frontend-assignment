@@ -1,20 +1,25 @@
+import Company from 'Pages/Company';
+import CompanyPage from 'Pages/Company/Page';
+import CompanyData from 'Pages/Company/Data';
+
 export const routes = [{
   name: 'Home',
   path: '/',
+  component: { render: (h) => h('router-view') },
   children: [
     {
       path: 'company',
-      components: require('Pages/Company'),
+      component: Company,
       children: [
         {
           name: 'Company Page',
           path: '',
-          components: require('Pages/Company/Page'),
+          component: CompanyPage,
         },
         {
           name: 'Company Data',
           path: 'data',
-          components: require('Pages/Company/Data'),
+          component: CompanyData,
         },
       ],
     },
