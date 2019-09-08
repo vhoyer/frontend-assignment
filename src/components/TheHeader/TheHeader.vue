@@ -1,24 +1,18 @@
 <template>
   <nav class="the-header">
     <UILink
+      to="/"
+      class="the-header__items test-home-link"
+    >
+        Home
+    </UILink>
+    <UILink
       to="/company"
-      class="test-company-link"
+      class="the-header__items test-company-link"
     >
         Company
     </UILink>
   </nav>
 </template>
 
-<style lang="scss" scoped>
-.the-header {
-  display: flex;
-  align-items: center;
-
-  height: 5rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-
-  background-color: var(--color-primary-pure);
-  color: var(--color-neutral-lighter);
-}
-</style>
+<style lang="scss" src="./TheHeader.scss" scoped></style>

@@ -36,5 +36,6 @@ export default {
 
 body {
   margin: 0;
+  color: var(--color-neutral-darker);
 }
 </style>

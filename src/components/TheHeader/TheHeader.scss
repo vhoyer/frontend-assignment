@@ -1,0 +1,17 @@
+.the-header {
+  display: flex;
+  align-items: center;
+
+  height: 5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  background-color: var(--color-primary-pure);
+  color: var(--color-neutral-lighter);
+}
+
+.the-header__items {
+  &:not(:first-child) {
+    margin-left: 1em;
+  }
+}

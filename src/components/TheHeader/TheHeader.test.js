@@ -19,4 +19,8 @@ describe('Components > TheHeader', () => {
   it('display a company link', () => {
     expect(wrapper.find('.test-company-link').exists()).toBe(true)
   })
+
+  it('display a home link', () => {
+    expect(wrapper.find('.test-home-link').exists()).toBe(true)
+  })
 })
