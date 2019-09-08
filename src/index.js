@@ -1,4 +1,5 @@
 import 'Styles/main.scss'
+import 'UI'
 import Vue from 'vue'
 import router from 'Router'
 

@@ -72,6 +72,9 @@
     "webpack-dev-server": "^3.1.10"
   },
   "jest": {
+    "setupFiles": [
+      "<rootDir>/src/ui"
+    ],
     "moduleFileExtensions": [
       "js",
       "json",

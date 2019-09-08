@@ -12,12 +12,8 @@
 
 <script>
 import { routes } from 'Router/routes'
-import UIText from 'UI/UIText'
 
 export default {
-  components: {
-    UIText,
-  },
   data: () => ({
     breadcrumbs: [],
   }),
