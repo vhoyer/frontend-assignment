@@ -5,7 +5,7 @@
   >
     <component
       :is="breadcrumbs.length > 1 ? 'UILink' : 'UIText'"
-      class="breadcrumb__item test-item"
+      class="app-breadcrumb__item test-item"
     >
       {{ breadcrumbs[0] }}
     </component>
@@ -16,7 +16,7 @@
       <component
         :is="breadcrumbs.slice(1).length !== index+1 ? 'UILink' : 'UIText'"
         :key="crumb"
-        class="breadcrumb__item test-item"
+        class="app-breadcrumb__item test-item"
       >
         {{ crumb }}
       </component>
