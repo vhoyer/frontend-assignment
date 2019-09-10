@@ -1,6 +1,6 @@
 import AppBreadcrumb from './AppBreadcrumb.vue'
 import VueRouter from 'vue-router'
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+import { mount, createLocalVue } from '@vue/test-utils'
 import {routes} from 'Router/routes'
 import UILink from 'UI/UILink'
 
@@ -18,7 +18,7 @@ jest.mock('Router/routes', () => ({
         path: 'data',
         children: [{
           name: 'Test 1',
-          path: 'well',
+          path: 'test',
         }],
       }],
     },{
@@ -38,7 +38,7 @@ describe('Components > AppBreadcrumb', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallowMount(AppBreadcrumb, {
+    wrapper = mount(AppBreadcrumb, {
       localVue,
       router,
     })
@@ -74,6 +74,11 @@ describe('Components > AppBreadcrumb', () => {
       expect(wrapper.findAll('.test-item').at(0).is(UILink)).toBe(true)
       expect(wrapper.findAll('.test-item').at(1).is(UILink)).toBe(false)
     })
+
+    it('renders links with the page path', () => {
+      expect(wrapper.findAll('.test-item').length).toBe(2)
+      expect(wrapper.findAll('.test-item').at(0).attributes('href')).toBe('#/')
+    })
   })
 
   describe('when the page changes to one with no children', () => {
@@ -91,6 +96,11 @@ describe('Components > AppBreadcrumb', () => {
       expect(wrapper.findAll('.test-item').length).toBe(2)
       expect(wrapper.findAll('.test-item').at(0).is(UILink)).toBe(true)
       expect(wrapper.findAll('.test-item').at(1).is(UILink)).toBe(false)
+    })
+
+    it('renders links with the page path', () => {
+      expect(wrapper.findAll('.test-item').length).toBe(2)
+      expect(wrapper.findAll('.test-item').at(0).attributes('href')).toBe('#/')
     })
   })
 

@@ -5,6 +5,7 @@
   >
     <component
       :is="breadcrumbs.length > 1 ? 'UILink' : 'UIText'"
+      :to="{name: breadcrumbs[0]}"
       class="app-breadcrumb__item test-item"
     >
       {{ breadcrumbs[0] }}
@@ -16,6 +17,7 @@
       <component
         :is="breadcrumbs.slice(1).length !== index+1 ? 'UILink' : 'UIText'"
         :key="crumb"
+        :to="{name: crumbs}"
         class="app-breadcrumb__item test-item"
       >
         {{ crumb }}
