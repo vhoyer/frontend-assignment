@@ -1,5 +1,5 @@
 <template>
-  <p>
+  <UIText tag="p">
     hello, I'm the Page Page
-  </p>
+  </UIText>
 </template>

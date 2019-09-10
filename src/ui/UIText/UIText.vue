@@ -1,6 +1,7 @@
 <template>
   <component
     :is="tag"
+    class="ui-text"
   >
     <slot/>
   </component>
@@ -8,6 +9,7 @@
 
 <script>
 export default {
+  name: 'UIText',
   props: {
     tag: {
       type: String,

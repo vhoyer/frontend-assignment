@@ -33,6 +33,7 @@
 
 <script>
 export default {
+  name: 'UILink',
   props: {
     tag: {
       type: String,
