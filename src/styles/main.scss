@@ -1,1 +1,29 @@
+:root {
+  --color-primary-light: #5d699a;
+  --color-primary-pure: #394783;
+  --color-primary-dark: #344279;
 
+  --color-accent: #ff3c6a;
+
+  --color-neutral-white: #ffffff;
+  --color-neutral-lighter: #f3f3f3;
+  --color-neutral-light: #b1b1b1;
+  --color-neutral-pure: #aaaaaa;
+  --color-neutral-dark: #7e7e7e;
+  --color-neutral-darker: #505050;
+
+  --space-s: 16px;
+  --space-m: 24px;
+  --space-l: 32px;
+
+  --size-content: 1200px;
+}
+
+body {
+  margin: 0;
+  color: var(--color-neutral-darker);
+}
+
+p {
+  margin: 0;
+}
