@@ -1,6 +1,8 @@
 .ui-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  grid-gap: var(--space-m);
+
   max-width: var(--size-content);
 
   margin-left: auto;
