@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <AppBreadcrumb />
+  <UIGrid>
+    <AppBreadcrumb v-ui:cell="12" />
     <div>
       <RouterView />
     </div>
-  </div>
+  </UIGrid>
 </template>
 
 <script>

@@ -1,0 +1,8 @@
+.ui-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  max-width: var(--size-content);
+
+  margin-left: auto;
+  margin-right: auto;
+}
