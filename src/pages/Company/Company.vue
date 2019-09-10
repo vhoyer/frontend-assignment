@@ -2,7 +2,11 @@
   <UIGrid>
     <AppBreadcrumb v-ui:cell="12" />
 
-    <RouterView v-ui:cell="'2/4/2/-1'" />
+    <UICard v-ui:cell="3">
+      lorem
+    </UICard>
+
+    <RouterView v-ui:cell="9" />
   </UIGrid>
 </template>
 
