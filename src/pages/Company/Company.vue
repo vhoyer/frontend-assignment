@@ -1,9 +1,8 @@
 <template>
   <UIGrid>
     <AppBreadcrumb v-ui:cell="12" />
-    <div>
-      <RouterView />
-    </div>
+
+    <RouterView v-ui:cell="'2/4/2/-1'" />
   </UIGrid>
 </template>
 
