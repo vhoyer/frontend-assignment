@@ -1,12 +1,26 @@
 <template>
-  <div>
-    <UIText
-      v-for="crumb in breadcrumbs"
-      :key="crumb"
+  <div
+    v-if="breadcrumbs.length"
+    class="app-breadcrumb"
+  >
+    <component
+      :is="breadcrumbs.length > 1 ? 'UILink' : 'UIText'"
       class="breadcrumb__item test-item"
     >
-      {{ crumb }}
-    </UIText>
+      {{ breadcrumbs[0] }}
+    </component>
+
+    <template v-for="(crumb, index) in breadcrumbs.slice(1)">
+      <UIText :key="`slash${crumb}`">/</UIText>
+
+      <component
+        :is="breadcrumbs.slice(1).length !== index+1 ? 'UILink' : 'UIText'"
+        :key="crumb"
+        class="breadcrumb__item test-item"
+      >
+        {{ crumb }}
+      </component>
+    </template>
   </div>
 </template>
 
@@ -55,12 +69,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.breadcrumb__item {
-  &:not(:first-child) {
-    &::before {
-      content: '/'
-    }
-  }
-}
-</style>
+<style lang="scss" src="./AppBreadcrumb.scss" scoped></style>
