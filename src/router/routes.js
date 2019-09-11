@@ -4,7 +4,8 @@ import CompanyPage from 'Pages/Company/Page'
 import CompanyData from 'Pages/Company/Data'
 
 export const routes = [{
-  name: 'Home',
+  meta: { label: 'Home' },
+  name: 'home',
   path: '/',
   component: AppLayout,
   children: [
@@ -13,12 +14,14 @@ export const routes = [{
       component: Company,
       children: [
         {
-          name: 'Company Page',
+          meta: { label: 'Company Page' },
+          name: 'home.company.page',
           path: '',
           component: CompanyPage,
         },
         {
-          name: 'Company Data',
+          meta: { label: 'Company Data' },
+          name: 'home.company.data',
           path: 'data',
           component: CompanyData,
         },

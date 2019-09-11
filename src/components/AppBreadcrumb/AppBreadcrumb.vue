@@ -5,22 +5,22 @@
   >
     <component
       :is="breadcrumbs.length > 1 ? 'UILink' : 'UIText'"
-      :to="{name: breadcrumbs[0]}"
+      :to="breadcrumbs[0]"
       class="app-breadcrumb__item test-item"
     >
-      {{ breadcrumbs[0] }}
+      {{ breadcrumbs[0].meta.label }}
     </component>
 
     <template v-for="(crumb, index) in breadcrumbs.slice(1)">
-      <UIText :key="`slash${crumb}`">/</UIText>
+      <UIText :key="`slash${crumb.name}`">/</UIText>
 
       <component
         :is="breadcrumbs.slice(1).length !== index+1 ? 'UILink' : 'UIText'"
-        :key="crumb"
-        :to="{name: crumb}"
+        :key="crumb.name"
+        :to="crumb"
         class="app-breadcrumb__item test-item"
       >
-        {{ crumb }}
+        {{ crumb.meta.label }}
       </component>
     </template>
   </div>
@@ -50,13 +50,13 @@ export default {
       const paths = this.constructPath(home)
 
       return paths.find((item) => {
-        return item.slice(-1)[0] === name
+        return item.slice(-1)[0].name === name
       })
     },
     constructPath(parent, carry = []) {
       const root = [...carry]
       if (parent.name) {
-        root.push(parent.name)
+        root.push(parent)
       }
 
       if (!parent.children) {
