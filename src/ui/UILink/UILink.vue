@@ -14,7 +14,7 @@
         href,
       }"
       @click="navigate"
-      :class="[classes,{ 'ui-link--active': isActive }]"
+      :class="[classes,{ 'ui-link--active': isExactActive }]"
     >
       <slot/>
     </component>

@@ -1,0 +1,26 @@
+.navigation-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation-panel__item {
+  padding: var(--space-m);
+
+  &:not(:first-child) {
+    border-top: var(--border);
+  }
+
+  &:first-child {
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+  }
+
+  &:last-child {
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+  }
+
+  &.ui-link--active {
+    box-shadow: 34px 0px 0px -30px var(--color-primary-pure) inset;
+  }
+}

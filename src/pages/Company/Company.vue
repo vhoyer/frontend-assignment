@@ -2,9 +2,10 @@
   <UIGrid>
     <AppBreadcrumb v-ui:cell="12" />
 
-    <UICard v-ui:cell="3">
-      lorem
-    </UICard>
+    <NavigationPanel
+      v-ui:cell="3"
+      :for-sibilings-of-route="$route.name"
+    />
 
     <RouterView v-ui:cell="9" />
   </UIGrid>
@@ -12,10 +13,12 @@
 
 <script>
 import AppBreadcrumb from 'Components/AppBreadcrumb'
+import NavigationPanel from 'Components/NavigationPanel'
 
 export default {
   components: {
     AppBreadcrumb,
+    NavigationPanel,
   },
 }
 </script>
