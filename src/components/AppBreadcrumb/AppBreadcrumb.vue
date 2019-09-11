@@ -17,7 +17,7 @@
       <component
         :is="breadcrumbs.slice(1).length !== index+1 ? 'UILink' : 'UIText'"
         :key="crumb"
-        :to="{name: crumbs}"
+        :to="{name: crumb}"
         class="app-breadcrumb__item test-item"
       >
         {{ crumb }}
