@@ -17,6 +17,10 @@
   --space-l: 32px;
 
   --size-content: 1200px;
+
+  --border-radius: 5px;
+  --border: 1px solid var(--color-neutral-light);
+  --box-shadow: 0 0 15px -2px var(--color-neutral-lighter);
 }
 
 body {
