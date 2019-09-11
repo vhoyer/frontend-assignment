@@ -15,7 +15,7 @@ export const routes = [{
       children: [
         {
           meta: { label: 'Company Page' },
-          name: 'home.company.page',
+          name: 'home.company',
           path: '',
           component: CompanyPage,
         },

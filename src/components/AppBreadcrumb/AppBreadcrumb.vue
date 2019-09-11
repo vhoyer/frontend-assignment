@@ -3,24 +3,19 @@
     v-if="breadcrumbs.length"
     class="app-breadcrumb"
   >
-    <component
-      :is="breadcrumbs.length > 1 ? 'UILink' : 'UIText'"
-      :to="breadcrumbs[0]"
-      class="app-breadcrumb__item test-item"
-    >
-      {{ breadcrumbs[0].meta.label }}
-    </component>
-
-    <template v-for="(crumb, index) in breadcrumbs.slice(1)">
-      <UIText :key="`slash${crumb.name}`">/</UIText>
+    <template v-for="(crumb, index) in breadcrumbs">
+      <UIText
+        v-if="index !== 0"
+        :key="`slash${crumb.name}`"
+      >/</UIText>
 
       <component
-        :is="breadcrumbs.slice(1).length !== index+1 ? 'UILink' : 'UIText'"
+        :is="breadcrumbs.length !== index+1 ? 'UILink' : 'UIText'"
         :key="crumb.name"
         :to="crumb"
         class="app-breadcrumb__item test-item"
       >
-        {{ crumb.meta.label }}
+        {{ crumb.label }}
       </component>
     </template>
   </div>
@@ -45,9 +40,7 @@ export default {
     buildBreadcrumbFor({ name }) {
       const home = routes[0]
 
-      if (name === home.name) return [name]
-
-      const paths = this.constructPath(home)
+      const paths = this.constructPath(home).slice(1)
 
       return paths.find((item) => {
         return item.slice(-1)[0].name === name
@@ -55,8 +48,11 @@ export default {
     },
     constructPath(parent, carry = []) {
       const root = [...carry]
-      if (parent.name) {
-        root.push(parent)
+      if (parent.meta && parent.meta.label) {
+        root.push({
+          name: parent.name,
+          label: parent.meta.label,
+        })
       }
 
       if (!parent.children) {

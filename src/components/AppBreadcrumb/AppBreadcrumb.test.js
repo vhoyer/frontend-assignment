@@ -6,23 +6,28 @@ import UILink from 'UI/UILink'
 
 jest.mock('Router/routes', () => ({
   routes: [{
-    name: 'Home',
+    meta: { label: 'Home' },
+    name: 'home',
     path: '/',
     children: [{
       path: 'company',
       children: [{
-        name: 'Company Page',
+        meta: { label: 'Company Page' },
+        name: 'home.company',
         path: '',
       },{
-        name: 'Company Data',
+        meta: { label: 'Company Data' },
+        name: 'home.company.data',
         path: 'data',
         children: [{
-          name: 'Test 1',
-          path: 'test',
+          meta: { label: 'Test 1' },
+          name: 'home.company.data.test1',
+          path: 'test1',
         }],
       }],
     },{
-      name: 'Dashboard',
+      meta: { label: 'Dashboard' },
+      name: 'home.dashboard',
       path: 'dashboard',
     }],
   }],
@@ -60,7 +65,7 @@ describe('Components > AppBreadcrumb', () => {
 
   describe('when the page changes', () => {
     beforeEach(() => {
-      router.push({ name: 'Company Page' }).catch(() => {})
+      router.push({ name: 'home.company' }).catch(() => {})
     })
 
     it('shows the bread crumb for the new page', () => {
@@ -83,7 +88,7 @@ describe('Components > AppBreadcrumb', () => {
 
   describe('when the page changes to one with no children', () => {
     beforeEach(() => {
-      router.push({ name: 'Dashboard' }).catch(() => {})
+      router.push({ name: 'home.dashboard' }).catch(() => {})
     })
 
     it('shows the bread crumb for the new page', () => {
@@ -106,7 +111,7 @@ describe('Components > AppBreadcrumb', () => {
 
   describe('when the page changes to one children of a child', () => {
     beforeEach(() => {
-      router.push({ name: 'Company Data' }).catch(() => {})
+      router.push({ name: 'home.company.data' }).catch(() => {})
     })
 
     it('shows the bread crumb for the new page', () => {
@@ -124,7 +129,7 @@ describe('Components > AppBreadcrumb', () => {
 
   describe('when the page changes to one children of a child of a child', () => {
     beforeEach(() => {
-      router.push({ name: 'Test 1' }).catch(() => {})
+      router.push({ name: 'home.company.data.test1' }).catch(() => {})
     })
 
     it('shows the bread crumb for the new page', () => {
