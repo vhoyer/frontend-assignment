@@ -19,4 +19,20 @@ describe('UI > UICard', () => {
   it('renders content passed to it', () => {
     expect(wrapper.text()).toMatch('my wonderful batman content')
   })
+
+  it('renders only the base classes', () => {
+    expect(wrapper.attributes('class')).toBe('ui-card')
+  })
+
+  describe('when a padding is passed to it', () => {
+    beforeEach(() => {
+      wrapper.setProps({
+        padding: 'medium',
+      })
+    })
+
+    it('renders the right classes', () => {
+      expect(wrapper.attributes('class')).toBe('ui-card ui-card--medium')
+    })
+  })
 })
