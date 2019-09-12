@@ -1,6 +1,8 @@
 .navigation-panel {
   display: flex;
   flex-direction: column;
+  font-size: .8rem;
+  text-transform: uppercase;
 }
 
 .navigation-panel__item {
@@ -22,5 +24,7 @@
 
   &.ui-link--exact-active {
     box-shadow: 34px 0px 0px -30px var(--color-primary-pure) inset;
+    background-color: var(--color-neutral-lighter);
+    color: var(--color-neutral-darker);
   }
 }
