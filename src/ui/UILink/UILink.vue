@@ -1,18 +1,14 @@
 <template>
   <RouterLink
     v-if="$attrs.to"
-    :tag="tag"
     v-bind="$attrs"
-    @click.native="$emit('click')"
+    :tag="tag"
     #default="{ href, route, navigate, isActive, isExactActive }"
   >
-    <component
-      :is="tag"
+    <UIText
+      :tag="tag"
       v-on="$listeners"
-      v-bind="{
-        ...$attrs,
-        href,
-      }"
+      v-bind="{ ...$attrs, href }"
       @click="navigate"
       :class="[staticClasses,{
         'ui-link--active': isActive,
@@ -21,19 +17,18 @@
       :style="dynamicStyle"
     >
       <slot/>
-    </component>
+    </UIText>
   </RouterLink>
-  <component
+  <UIText
     v-else
-    :is="tag"
+    :tag="tag"
     :class="staticClasses"
     :style="dynamicStyle"
     v-on="$listeners"
     v-bind="$attrs"
-    @click="$emit('click')"
   >
     <slot/>
-  </component>
+  </UIText>
 </template>
 
 <script>

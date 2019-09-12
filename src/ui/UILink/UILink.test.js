@@ -1,11 +1,11 @@
 import UILink from './UILink.vue'
-import { shallowMount, RouterLinkStub } from '@vue/test-utils'
+import { mount, RouterLinkStub } from '@vue/test-utils'
 
 describe('UI > UILink', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallowMount(UILink, {
+    wrapper = mount(UILink, {
       slots: {
         default: 'Why all my mock texts talk about batman?',
       },
@@ -26,16 +26,6 @@ describe('UI > UILink', () => {
 
   it('renders the text passed in the default slot', () => {
     expect(wrapper.text()).toBe('Why all my mock texts talk about batman?')
-  })
-
-  describe('when user clicks on it', () => {
-    beforeEach(() => {
-      wrapper.trigger('click')
-    })
-
-    it('emits a click event', () => {
-      expect(wrapper.emitted('click')).toBeTruthy()
-    })
   })
 
   describe('when a random prop is passed to it', () => {
@@ -70,9 +60,9 @@ describe('UI > UILink', () => {
       })
 
       it('renders an RouterLink', () => {
+        expect(wrapper.find(RouterLinkStub).exists()).toBe(true)
         expect(wrapper.find(RouterLinkStub).is('a')).toBe(false)
         expect(wrapper.find(RouterLinkStub).is('button')).toBe(true)
-        expect(wrapper.find(RouterLinkStub).exists()).toBe(true)
       })
     })
   })
