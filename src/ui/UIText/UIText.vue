@@ -2,6 +2,9 @@
   <component
     :is="tag"
     class="ui-text"
+    :class="{
+      [`ui-text--${size}`]: size !== 'inherit',
+    }"
   >
     <slot/>
   </component>
@@ -15,6 +18,18 @@ export default {
       type: String,
       default: 'span',
     },
+    size: {
+      type: String,
+      default: 'inherit',
+      validator: value => [
+        'inherit',
+        'small',
+        'medium',
+        'large',
+      ].includes(value),
+    },
   },
 }
 </script>
+
+<style lang="scss" src="./UIText.scss"></style>

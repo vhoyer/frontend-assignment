@@ -24,6 +24,10 @@ describe('UI > UIText', () => {
     expect(wrapper.text()).toBe('Why all my mock texts talk about batman?')
   })
 
+  it('renders only the base classes', () => {
+    expect(wrapper.attributes('class')).toBe('ui-text')
+  })
+
   describe('when a tag prop is passed', () => {
     beforeEach(() => {
       wrapper.setProps({
@@ -33,6 +37,18 @@ describe('UI > UIText', () => {
 
     it('renders the passed tag instead', () => {
       expect(wrapper.is('strong')).toBe(true)
+    })
+  })
+
+  describe('when a size prop is passed', () => {
+    beforeEach(() => {
+      wrapper.setProps({
+        size: 'small',
+      })
+    })
+
+    it('renders the right classes', () => {
+      expect(wrapper.attributes('class')).toBe('ui-text ui-text--small')
     })
   })
 })
