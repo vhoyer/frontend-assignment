@@ -14,10 +14,11 @@
         href,
       }"
       @click="navigate"
-      :class="[classes,{
+      :class="[staticClasses,{
         'ui-link--active': isActive,
         'ui-link--exact-active': isExactActive,
       }]"
+      :style="dynamicStyle"
     >
       <slot/>
     </component>
@@ -25,7 +26,8 @@
   <component
     v-else
     :is="tag"
-    :class="classes"
+    :class="staticClasses"
+    :style="dynamicStyle"
     v-on="$listeners"
     v-bind="$attrs"
     @click="$emit('click')"
@@ -42,22 +44,26 @@ export default {
       type: String,
       default: 'a',
     },
+    color: {
+      type: String,
+      default: 'primary-light',
+    },
   },
   computed: {
-    classes() {
+    staticClasses() {
       return 'ui-link'
+    },
+    dynamicStyle() {
+      const style = {}
+
+      if (this.color !== 'inherit') {
+        style['--ui-link-color'] = `var(--color-${this.color})`
+      }
+
+      return style
     },
   },
 }
 </script>
 
-<style lang="scss" scoped>
-.ui-link {
-  color: inherit;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-</style>
+<style lang="scss" src="./UILink.scss"></style>
