@@ -13,6 +13,7 @@
   --color-neutral-darker: #505050;
 
   --font-small: .8rem;
+  --font-semibold: 500;
 
   --space-s: 16px;
   --space-m: 24px;
@@ -27,6 +28,8 @@
 
 body {
   margin: 0;
+
+  font-family: 'Fira Sans', sans-serif;
   color: var(--color-neutral-darker);
 }
 

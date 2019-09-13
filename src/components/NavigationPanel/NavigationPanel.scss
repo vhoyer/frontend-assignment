@@ -1,7 +1,9 @@
 .navigation-panel {
   display: flex;
   flex-direction: column;
+
   font-size: var(--font-small);
+  font-weight: var(--font-semibold);
   text-transform: uppercase;
 }
 
