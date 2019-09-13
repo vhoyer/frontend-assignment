@@ -1,10 +1,13 @@
-.ui-link {
-  --ui-link-color: inherit;
-
-  color: var(--ui-link-color);
+a {
   text-decoration: none;
 
   &:hover {
     text-decoration: underline;
   }
+}
+
+.ui-link {
+  --ui-link-color: inherit;
+
+  color: var(--ui-link-color);
 }
