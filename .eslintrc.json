@@ -1,0 +1,21 @@
+{
+  "plugins": [
+    "eslint-plugin-import",
+    "eslint-plugin-jest",
+    "eslint-plugin-vue"
+  ],
+  "env": {
+    "es6": true,
+    "jest": true,
+    "browser": true
+  },
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/recommended"
+  ]
+}
