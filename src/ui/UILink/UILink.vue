@@ -7,16 +7,16 @@
   >
     <UIText
       :tag="tag"
-      v-on="$listeners"
       v-bind="{ ...$attrs, href }"
-      @click="navigate"
       :class="[staticClasses,{
         'ui-link--active': isActive,
         'ui-link--exact-active': isExactActive,
       }]"
       :style="dynamicStyle"
+      v-on="$listeners"
+      @click="navigate"
     >
-      <slot/>
+      <slot />
     </UIText>
   </RouterLink>
   <UIText
@@ -24,10 +24,10 @@
     :tag="tag"
     :class="staticClasses"
     :style="dynamicStyle"
-    v-on="$listeners"
     v-bind="$attrs"
+    v-on="$listeners"
   >
-    <slot/>
+    <slot />
   </UIText>
 </template>
 

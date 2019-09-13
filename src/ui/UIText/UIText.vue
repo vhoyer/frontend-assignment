@@ -6,7 +6,7 @@
       [`ui-text--${size}`]: size !== 'inherit',
     }"
   >
-    <slot/>
+    <slot />
   </component>
 </template>
 

@@ -1,4 +1,3 @@
-import { routes } from './routes'
 import * as utils from './utils'
 
 jest.mock('./routes', () => ({

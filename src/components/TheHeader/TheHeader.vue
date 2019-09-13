@@ -5,14 +5,14 @@
       class="the-header__items test-home-link"
       color="inherit"
     >
-        Home
+      Home
     </UILink>
     <UILink
       to="/company"
       class="the-header__items test-company-link"
       color="inherit"
     >
-        Company
+      Company
     </UILink>
   </nav>
 </template>

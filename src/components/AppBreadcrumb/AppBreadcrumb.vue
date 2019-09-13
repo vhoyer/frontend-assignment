@@ -7,7 +7,9 @@
       <UIText
         v-if="index !== 0"
         :key="`slash${crumb.name}`"
-      >/</UIText>
+      >
+        /
+      </UIText>
 
       <component
         :is="breadcrumbs.length !== index+1 ? 'UILink' : 'UIText'"
@@ -28,13 +30,13 @@ export default {
   data: () => ({
     breadcrumbs: [],
   }),
-  mounted() {
-    this.breadcrumbs = this.buildBreadcrumbFor(this.$route)
-  },
   watch: {
     '$route'(newRoute) {
       this.breadcrumbs = this.buildBreadcrumbFor(newRoute)
     },
+  },
+  mounted() {
+    this.breadcrumbs = this.buildBreadcrumbFor(this.$route)
   },
   methods: {
     buildBreadcrumbFor({ name }) {

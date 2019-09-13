@@ -1,6 +1,5 @@
 <template>
-  <div class="the-footer">
-  </div>
+  <div class="the-footer" />
 </template>
 
 <style lang="scss" scoped>
