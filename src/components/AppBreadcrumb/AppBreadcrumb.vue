@@ -7,6 +7,7 @@
       <UIText
         v-if="index !== 0"
         :key="`slash${crumb.name}`"
+        class="app-breadcrumb__item"
       >
         /
       </UIText>
