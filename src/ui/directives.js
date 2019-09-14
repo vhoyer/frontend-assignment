@@ -1,8 +1,12 @@
 import Vue from 'vue'
-import { cell } from './UIGrid'
+import {
+  cell,
+  row,
+} from './UIGrid'
 
 const directives = {
   cell,
+  row,
 }
 
 const module = (hook) => ({

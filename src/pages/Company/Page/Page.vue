@@ -7,8 +7,21 @@
       Sit assumenda deleniti ipsum mollitia error. Omnis quaerat error laboriosam deleniti sint Alias aliquam temporibus esse qui quibusdam! Eum blanditiis eligendi iure neque eius. Autem eum omnis tempore nulla eveniet
     </UIText>
 
-    <UIInputField label="Company Name">
-      <UIInput placeholder="e.g. Your Company Name" />
-    </UIInputField>
+    <UIGrid>
+      <UIInputField
+        v-ui:cell="6"
+        label="Company Name"
+      >
+        <UIInput placeholder="e.g. Your Company Name" />
+      </UIInputField>
+
+      <UIInputField
+        v-ui:cell="6"
+        v-ui:row="2"
+        label="Company Spend"
+      >
+        <UIInput placeholder="e.g. $150,000" />
+      </UIInputField>
+    </UIGrid>
   </UICard>
 </template>
