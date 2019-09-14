@@ -1,5 +1,4 @@
-.ui-input {
-  border-radius: var(--border-radius);
-  border: var(--border);
-  box-shadow: var(--box-shadow);
+.ui-input-field {
+  display: inline-flex;
+  flex-direction: column;
 }

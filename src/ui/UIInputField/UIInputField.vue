@@ -1,9 +1,11 @@
 <template>
-  <UIText tag="label">
-    {{ label }}
+  <label class="ui-input-field">
+    <UIText type="caption">
+      {{ label }}
+    </UIText>
 
     <slot />
-  </UIText>
+  </label>
 </template>
 
 <script>
