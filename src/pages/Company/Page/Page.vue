@@ -22,6 +22,21 @@
       >
         <UIInput placeholder="e.g. $150,000" />
       </UIInputField>
+
+      <UIInputField
+        v-ui:cell="6"
+        v-ui:row="3"
+        label="Company Spend Ability"
+      >
+        <UIInput placeholder="e.g. $150,000 - $300,000" />
+      </UIInputField>
+
+      <UIInputField
+        v-ui:cell="12"
+        label="Notes"
+      >
+        <UITextarea placeholder="e.g. Good Tech Company" />
+      </UIInputField>
     </UIGrid>
   </UICard>
 </template>
