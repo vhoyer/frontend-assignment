@@ -66,3 +66,5 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" src="./UIDialog.scss"></style>
