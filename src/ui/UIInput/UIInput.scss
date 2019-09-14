@@ -2,4 +2,10 @@
   border-radius: var(--border-radius);
   border: var(--border);
   box-shadow: var(--box-shadow);
+
+  padding: .8rem 1rem;
+
+  &::placeholder {
+    color: rgba(var(--color-rgb-neutral-pure), .8);
+  }
 }
