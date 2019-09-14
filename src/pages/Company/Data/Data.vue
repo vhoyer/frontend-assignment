@@ -51,6 +51,12 @@
           rows="10"
           @click="$router.push({hash: 'aditional-notes'})"
         />
+
+        <UIButtonGroup>
+          <UIButton>
+            Save
+          </UIButton>
+        </UIButtonGroup>
       </UIDialog>
     </UIGrid>
   </UICard>
