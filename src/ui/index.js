@@ -8,6 +8,7 @@ import UIInput from './UIInput'
 import UIInputField from './UIInputField'
 import UITextarea from './UITextarea'
 import UIDialog from './UIDialog'
+import UIButton from './UIButton'
 
 Vue.component('UIText', UIText)
 Vue.component('UILink', UILink)
@@ -17,3 +18,4 @@ Vue.component('UIInput', UIInput)
 Vue.component('UIInputField', UIInputField)
 Vue.component('UITextarea', UITextarea)
 Vue.component('UIDialog', UIDialog)
+Vue.component('UIButton', UIButton)
