@@ -7,6 +7,7 @@ import UICard from './UICard'
 import UIInput from './UIInput'
 import UIInputField from './UIInputField'
 import UITextarea from './UITextarea'
+import UIDialog from './UIDialog'
 
 Vue.component('UIText', UIText)
 Vue.component('UILink', UILink)
@@ -15,3 +16,4 @@ Vue.component('UICard', UICard)
 Vue.component('UIInput', UIInput)
 Vue.component('UIInputField', UIInputField)
 Vue.component('UITextarea', UITextarea)
+Vue.component('UIDialog', UIDialog)
