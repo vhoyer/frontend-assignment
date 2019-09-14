@@ -9,7 +9,10 @@
       @click="close"
     />
 
-    <UICard padding="medium">
+    <UICard
+      padding="medium"
+      class="ui-dialog__modal"
+    >
       <UIGrid margins="bottom">
         <UIText
           v-ui:cell="11"

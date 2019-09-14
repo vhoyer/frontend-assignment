@@ -1,3 +1,30 @@
+.ui-dialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.ui-dialog__backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(var(--color-rgb-primary-dark), .2);
+  z-index: -1;
+}
+
+.ui-dialog__modal {
+  background-color: white;
+  box-shadow: 0 2px 3px 0 rgba(var(--color-rgb-primary-dark), .4);
+}
+
 .ui-dialog__close-button {
   position: relative;
   min-width: 40px;
