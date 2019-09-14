@@ -35,7 +35,10 @@
         v-ui:cell="12"
         label="Notes"
       >
-        <UITextarea placeholder="e.g. Good Tech Company" />
+        <UITextarea
+          placeholder="e.g. Good Tech Company"
+          rows="10"
+        />
       </UIInputField>
     </UIGrid>
   </UICard>
