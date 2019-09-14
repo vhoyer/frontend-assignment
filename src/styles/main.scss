@@ -5,14 +5,19 @@
 
   --color-accent: #ff3c6a;
 
-  --color-neutral-white: #ffffff;
   --color-neutral-lighter: #f3f3f3;
   --color-neutral-light: #b1b1b1;
   --color-neutral-pure: #aaaaaa;
   --color-neutral-dark: #7e7e7e;
   --color-neutral-darker: #505050;
 
-  --font-small: .8rem;
+  --color-rgb-neutral-lighter: 243,243,243;
+  --color-rgb-neutral-light: 177,177,177;
+  --color-rgb-neutral-pure: 170,170,170;
+  --color-rgb-neutral-dark: 126,126,126;
+  --color-rgb-neutral-darker: 80,80,80;
+
+  --font-small: .85rem;
   --font-semibold: 500;
 
   --space-s: 16px;
@@ -22,8 +27,8 @@
   --size-content: 1200px;
 
   --border-radius: 5px;
-  --border: 1px solid var(--color-neutral-light);
-  --box-shadow: 0 0 15px -2px var(--color-neutral-lighter);
+  --border: 1px solid rgba(var(--color-rgb-neutral-light), .5);
+  --box-shadow: 0 0 14px -2px rgba(var(--color-rgb-neutral-light), .2);
 }
 
 body {
