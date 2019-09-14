@@ -46,11 +46,11 @@ body {
   color: var(--color-neutral-darker);
 }
 
-p {
-  margin: 0;
-}
-
+p,
+strong,
 button {
   background-color: transparent;
   border: none;
+  font-weight: normal;
+  margin: 0;
 }
