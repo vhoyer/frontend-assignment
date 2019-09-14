@@ -38,8 +38,20 @@
         <UITextarea
           placeholder="e.g. Good Tech Company"
           rows="10"
+          @click="$router.push({hash: 'aditional-notes'})"
         />
       </UIInputField>
+
+      <UIDialog
+        title="Aditional Notes"
+        url-hash="#aditional-notes"
+      >
+        <UITextarea
+          placeholder="e.g. Good Tech Company"
+          rows="10"
+          @click="$router.push({hash: 'aditional-notes'})"
+        />
+      </UIDialog>
     </UIGrid>
   </UICard>
 </template>
