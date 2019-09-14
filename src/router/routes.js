@@ -14,16 +14,21 @@ export const routes = [{
       component: Company,
       children: [
         {
-          meta: { label: 'Company Page' },
-          name: 'home.company',
-          path: '',
-          component: CompanyPage,
-        },
-        {
           meta: { label: 'Company Data' },
           name: 'home.company.data',
           path: 'data',
           component: CompanyData,
+        },
+        {
+          meta: { label: 'Company Table' },
+          name: 'home.company.table',
+          path: 'table',
+        },
+        {
+          meta: { label: 'Company Page' },
+          name: 'home.company',
+          path: '',
+          component: CompanyPage,
         },
       ],
     },
