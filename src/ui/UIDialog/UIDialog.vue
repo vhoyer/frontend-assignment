@@ -54,12 +54,11 @@ export default {
   },
   methods: {
     submit($event) {
-      this.isActive = false
-
+      this.close()
       this.$emit('submit', $event)
     },
     close() {
-      this.isActive = false
+      this.$router.push({ hash: '' })
     },
   },
 }

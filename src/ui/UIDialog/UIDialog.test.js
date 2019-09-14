@@ -81,6 +81,10 @@ describe('UI > UIDialog', () => {
       it('closes', () => {
         expect(wrapper.isEmpty()).toBe(true)
       })
+
+      it('clears hash', () => {
+        expect(wrapper.vm.$route.hash).toBe('')
+      })
     })
 
     describe('when user clicks onto close button', () => {
@@ -90,6 +94,10 @@ describe('UI > UIDialog', () => {
 
       it('closes', () => {
         expect(wrapper.isEmpty()).toBe(true)
+      })
+
+      it('clears hash', () => {
+        expect(wrapper.vm.$route.hash).toBe('')
       })
     })
 
@@ -105,6 +113,10 @@ describe('UI > UIDialog', () => {
 
       it('closes the dialog', () => {
         expect(wrapper.isEmpty()).toBe(true)
+      })
+
+      it('clears hash', () => {
+        expect(wrapper.vm.$route.hash).toBe('')
       })
     })
   })
