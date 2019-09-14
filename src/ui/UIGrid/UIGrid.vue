@@ -15,6 +15,7 @@ export default {
       type: String,
       default: 'top bottom',
       validator: value => value.split(' ').every(side => [
+        'none',
         'top',
         'right',
         'bottom',
@@ -24,6 +25,10 @@ export default {
   },
   computed: {
     _margins() {
+      if (this.margins.includes('none')) {
+        return []
+      }
+
       return this.margins.split(' ')
     },
     marginClasses() {
