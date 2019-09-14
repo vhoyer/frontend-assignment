@@ -5,6 +5,8 @@
 
   padding: .8rem 1rem;
 
+  font-family: inherit;
+
   &::placeholder {
     color: rgba(var(--color-rgb-neutral-pure), .8);
   }
