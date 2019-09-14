@@ -52,6 +52,9 @@ export default {
       this.isActive = hash === this.urlHash
     },
   },
+  mounted() {
+    this.isActive = this.$route.hash === this.urlHash
+  },
   methods: {
     submit($event) {
       this.close()

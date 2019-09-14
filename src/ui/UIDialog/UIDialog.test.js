@@ -120,4 +120,26 @@ describe('UI > UIDialog', () => {
       })
     })
   })
+
+  describe('when router hash is already there when dialog mounts', () => {
+    beforeEach(() => {
+      router.push({hash: 'yup-thats-me'})
+
+      wrapper = mount(UIDialog, {
+        localVue,
+        router,
+        propsData: {
+          title: "That's the dialog title",
+          urlHash: '#yup-thats-me',
+        },
+        scopedSlots: {
+          default: '<button id="btn" @click="props.submit(1)">content being rendered</button>',
+        },
+      })
+    })
+
+    it('opens', () => {
+      expect(wrapper.isEmpty()).toBe(false)
+    })
+  })
 })
