@@ -8,8 +8,8 @@
       @click="close"
     />
 
-    <UICard>
-      <UIGrid>
+    <UICard padding="medium">
+      <UIGrid margins="bottom">
         <UIText
           v-ui:cell="11"
           class="test-title"
