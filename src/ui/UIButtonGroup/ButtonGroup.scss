@@ -1,0 +1,8 @@
+.ui-button-group {
+  display: flex;
+  flex-direction: row-reverse;
+
+  & > * {
+    margin-left: var(--space-s);
+  }
+}
