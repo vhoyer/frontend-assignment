@@ -11,6 +11,7 @@
       :class="[staticClasses,{
         'ui-link--active': isActive,
         'ui-link--exact-active': isExactActive,
+        'ui-link--exact-path-active': $route.name === route.name,
       }]"
       :style="dynamicStyle"
       v-on="$listeners"

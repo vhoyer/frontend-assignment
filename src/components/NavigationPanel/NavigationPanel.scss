@@ -24,7 +24,7 @@
     border-bottom-left-radius: var(--border-radius);
   }
 
-  &.ui-link--exact-active {
+  &.ui-link--exact-path-active {
     box-shadow: 34px 0px 0px -30px var(--color-primary-pure) inset;
     background-color: var(--color-neutral-lighter);
     color: var(--color-neutral-darker);
