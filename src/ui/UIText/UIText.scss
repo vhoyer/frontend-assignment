@@ -1,3 +1,10 @@
 .ui-text--small {
   font-size: var(--font-small);
 }
+
+.ui-text--caption {
+  color: var(--color-neutral-pure);
+  font-size: var(--font-small);
+  text-transform: uppercase;
+  line-height: 1.8rem;
+}

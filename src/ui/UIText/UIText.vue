@@ -4,6 +4,7 @@
     class="ui-text"
     :class="{
       [`ui-text--${size}`]: size !== 'inherit',
+      [`ui-text--${type}`]: type !== 'default',
     }"
   >
     <slot />
@@ -27,6 +28,10 @@ export default {
         'medium',
         'large',
       ].includes(value),
+    },
+    type: {
+      type: String,
+      default: 'default',
     },
   },
 }
