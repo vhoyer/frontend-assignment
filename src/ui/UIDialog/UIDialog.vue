@@ -11,7 +11,7 @@
     <UICard>
       <UIGrid>
         <UIText
-          v-ui:cell="10"
+          v-ui:cell="11"
           class="test-title"
           tag="strong"
           type="caption"
