@@ -2,6 +2,7 @@
   <div
     v-if="isActive"
     class="ui-dialog"
+    role="dialog"
   >
     <div
       class="ui-dialog__backdrop test-backdrop"
@@ -20,11 +21,10 @@
         </UIText>
 
         <button
-          class="test-close-button"
+          class="ui-dialog__close-button test-close-button"
+          :aria-label="`Close ${title} dialog`"
           @click="close"
-        >
-          x
-        </button>
+        />
       </UIGrid>
 
       <slot :submit="submit" />

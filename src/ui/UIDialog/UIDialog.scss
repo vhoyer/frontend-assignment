@@ -1,0 +1,31 @@
+.ui-dialog__close-button {
+  position: relative;
+  min-width: 40px;
+  min-height: 40px;
+  //magic numbers to recenter button after resizing it to be optimal for UX
+  top: -8px;
+  right: -14px;
+  margin-bottom: -1rem;
+
+  &::after,
+  &::before {
+    position: absolute;
+    top: calc(100% - 3.7ex);
+    left: calc(100% - 2.9ex);
+    display: block;
+    height: .8rem;
+    width: .15rem;
+
+    content: '';
+
+    background-color: var(--color-neutral-light);
+  }
+
+  &::before {
+    transform: rotateZ(-45deg)
+  }
+
+  &::after {
+    transform: rotateZ(45deg)
+  }
+}
