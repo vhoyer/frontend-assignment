@@ -3,7 +3,9 @@
     :type="type"
     class="ui-button"
   >
-    <slot />
+    <UIText>
+      <slot />
+    </UIText>
   </button>
 </template>
 

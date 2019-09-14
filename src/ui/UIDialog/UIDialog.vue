@@ -10,7 +10,7 @@
     />
 
     <UICard
-      padding="medium"
+      padding="large"
       class="ui-dialog__modal"
     >
       <UIGrid margins="bottom">

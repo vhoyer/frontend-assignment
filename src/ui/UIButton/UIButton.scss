@@ -1,5 +1,9 @@
 .ui-button {
   border-radius: var(--border-radius);
-  background-color: var(--color-primary-pure);
+
+  padding: .6rem var(--space-l);
+  background-color: var(--color-primary-light);
+
+  text-transform: uppercase;
   color: var(--color-contrast-primary);
 }

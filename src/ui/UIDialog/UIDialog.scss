@@ -23,6 +23,7 @@
 .ui-dialog__modal {
   background-color: white;
   box-shadow: 0 2px 3px 0 rgba(var(--color-rgb-primary-dark), .4);
+  padding-top: var(--space-m);
 }
 
 .ui-dialog__close-button {
