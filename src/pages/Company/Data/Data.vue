@@ -45,6 +45,7 @@
       <UIDialog
         title="Aditional Notes"
         url-hash="#aditional-notes"
+        #default="{ submit }"
       >
         <UITextarea
           placeholder="e.g. Good Tech Company"
@@ -53,7 +54,7 @@
         />
 
         <UIButtonGroup>
-          <UIButton>
+          <UIButton @click="submit">
             Save
           </UIButton>
         </UIButtonGroup>
