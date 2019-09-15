@@ -2,6 +2,7 @@
   <button
     :type="type"
     class="ui-button"
+    v-on="$listeners"
   >
     <UIText>
       <slot />
