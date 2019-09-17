@@ -3,6 +3,8 @@
     v-if="isActive"
     class="ui-dialog"
     role="dialog"
+    aria-modal="true"
+    :aria-label="title"
   >
     <div
       class="ui-dialog__backdrop test-backdrop"
@@ -17,7 +19,6 @@
         <UIText
           v-ui:cell="11"
           class="test-title"
-          tag="strong"
           type="caption"
         >
           {{ title }}
