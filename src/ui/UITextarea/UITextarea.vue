@@ -11,11 +11,11 @@
 export default {
   computed: {
     listeners() {
-      const listeners = {...this.$listeners};
+      const listeners = {...this.$listeners}
 
-      delete listeners.input;
+      delete listeners.input
 
-      return listeners;
+      return listeners
     },
   },
 }
