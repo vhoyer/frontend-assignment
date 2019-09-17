@@ -54,6 +54,13 @@ export default {
     '$route'({ hash }) {
       this.isActive = hash === this.urlHash
     },
+    'isActive'(isActive) {
+      if (isActive) {
+        window.addEventListener('keydown', this.escHandling)
+      } else {
+        window.removeEventListener('keydown', this.escHandling)
+      }
+    },
   },
   mounted() {
     this.isActive = this.$route.hash === this.urlHash
@@ -65,6 +72,11 @@ export default {
     },
     close() {
       this.$router.push({ hash: '' })
+    },
+    escHandling(event) {
+      if (event.key !== 'Escape') return
+
+      this.close()
     },
   },
 }
