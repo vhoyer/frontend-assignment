@@ -1,15 +1,33 @@
 <template>
-  <label class="ui-input-field">
+  <ValidationProvider
+    v-bind="$attrs"
+    :name="label"
+    tag="label"
+    class="ui-input-field"
+    #default="{ errors }"
+  >
     <UIText type="caption">
       {{ label }}
     </UIText>
 
     <slot />
-  </label>
+    {{ errors[0] }}
+  </ValidationProvider>
 </template>
 
 <script>
+import { ValidationProvider, extend } from 'vee-validate'
+import { required } from 'vee-validate/dist/rules'
+
+extend('required', {
+  ...required,
+  message: 'Please fill the {_field_} field',
+})
+
 export default {
+  components: {
+    ValidationProvider,
+  },
   props: {
     label: {
       type: String,

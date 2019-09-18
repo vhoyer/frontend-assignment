@@ -11,8 +11,12 @@
       <UIInputField
         v-ui:cell="6"
         label="Company Name"
+        rules="required"
       >
-        <UIInput placeholder="e.g. Your Company Name" />
+        <UIInput
+          v-model="company.name"
+          placeholder="e.g. Your Company Name"
+        />
       </UIInputField>
 
       <UIInputField
@@ -20,7 +24,10 @@
         v-ui:row="2"
         label="Company Spend"
       >
-        <UIInput placeholder="e.g. $150,000" />
+        <UIInput
+          v-model="company.spend"
+          placeholder="e.g. $150,000"
+        />
       </UIInputField>
 
       <UIInputField
@@ -28,7 +35,10 @@
         v-ui:row="3"
         label="Company Spend Ability"
       >
-        <UIInput placeholder="e.g. $150,000 - $300,000" />
+        <UIInput
+          v-model="company.spandAbility"
+          placeholder="e.g. $150,000 - $300,000"
+        />
       </UIInputField>
 
       <UIInputField
@@ -38,7 +48,8 @@
         <UITextarea
           placeholder="e.g. Good Tech Company"
           rows="10"
-          @click="$router.push({hash: 'aditional-notes'})"
+          :value="company.notes"
+          @focus="$router.push({hash: 'aditional-notes'})"
         />
       </UIInputField>
 
@@ -48,6 +59,7 @@
         #default="{ submit }"
       >
         <UITextarea
+          v-model="company.notes"
           placeholder="e.g. Good Tech Company"
           rows="10"
           @click="$router.push({hash: 'aditional-notes'})"
@@ -62,3 +74,11 @@
     </UIGrid>
   </UICard>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    company: {},
+  }),
+}
+</script>
