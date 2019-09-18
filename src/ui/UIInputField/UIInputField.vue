@@ -17,10 +17,8 @@
 
 <script>
 import { ValidationProvider, extend } from 'vee-validate'
-import { required } from 'vee-validate/dist/rules'
-
 extend('required', {
-  ...required,
+  validate: value => Boolean(value),
   message: 'Please fill the {_field_} field',
 })
 
