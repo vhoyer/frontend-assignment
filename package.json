@@ -86,7 +86,7 @@
       "^.+\\.js$": "babel-jest"
     },
     "transformIgnorePatterns": [
-      "<rootDir>/node_modules/(?!vee-validate)"
+      "<rootDir>/node_modules/(?!vee-validate/dist/rules)"
     ],
     "moduleNameMapper": {
       "^Router/?(.*)$": "<rootDir>/src/router/$1",
