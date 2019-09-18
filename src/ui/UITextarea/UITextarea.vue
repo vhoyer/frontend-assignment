@@ -4,6 +4,7 @@
     class="ui-textarea"
     v-on="listeners"
     @input="$emit('input', $event.target.value)"
+    @blur="$emit('blur', $event)"
   />
 </template>
 
@@ -14,6 +15,8 @@ export default {
       const listeners = {...this.$listeners}
 
       delete listeners.input
+      // removing blur event to work around a bug in VeeValidate
+      delete listeners.blur
 
       return listeners
     },
