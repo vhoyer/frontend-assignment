@@ -1,5 +1,6 @@
 <template>
-  <RouterLink
+  <component
+    :is="UILinkComponent"
     v-if="$attrs.to"
     v-bind="$attrs"
     :tag="tag"
@@ -19,7 +20,7 @@
     >
       <slot />
     </UIText>
-  </RouterLink>
+  </component>
   <UIText
     v-else
     :tag="tag"
@@ -59,6 +60,7 @@ export default {
       return style
     },
   },
+  inject: ['UILinkComponent'],
 }
 </script>
 
