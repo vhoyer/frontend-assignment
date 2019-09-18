@@ -24,9 +24,7 @@ extend('required', {
 })
 
 extend('positive_number', {
-  validate: value => {
-    return Number(value) >= 0
-  },
+  validate: value => Number(value) >= 0,
   message: 'Please insert a positive number in {_field_} field',
 })
 
