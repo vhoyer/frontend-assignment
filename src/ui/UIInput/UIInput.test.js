@@ -1,11 +1,11 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import UIInput from './UIInput.vue'
 
 describe('UI > UIInput', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallowMount(UIInput)
+    wrapper = mount(UIInput)
   })
 
   it('is a vue instance', () => {

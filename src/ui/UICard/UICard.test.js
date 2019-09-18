@@ -1,11 +1,11 @@
 import UICard from './UICard.vue'
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 
 describe('UI > UICard', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallowMount(UICard, {
+    wrapper = mount(UICard, {
       slots: {
         default: 'my wonderful batman content',
       },

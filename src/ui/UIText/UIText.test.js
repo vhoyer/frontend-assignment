@@ -1,11 +1,11 @@
 import UIText from './UIText.vue'
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 
 describe('UI > UIText', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallowMount(UIText, {
+    wrapper = mount(UIText, {
       slots: {
         default: 'Why all my mock texts talk about batman?',
       },

@@ -1,11 +1,11 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import UITextarea from './UITextarea.vue'
 
 describe('UI > UITextarea', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallowMount(UITextarea)
+    wrapper = mount(UITextarea)
   })
 
   it('is a vue instance', () => {

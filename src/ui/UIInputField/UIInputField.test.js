@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import UIInputField from './UIInputField.vue'
 import UIText from 'UI/UIText'
 
@@ -6,7 +6,7 @@ describe('UI > UIInputField', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallowMount(UIInputField, {
+    wrapper = mount(UIInputField, {
       propsData: {
         label: 'sudo work',
       },

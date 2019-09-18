@@ -1,11 +1,11 @@
 import TheHeader from './TheHeader.vue'
-import { shallowMount, RouterLinkStub } from '@vue/test-utils'
+import { mount, RouterLinkStub } from '@vue/test-utils'
 
 describe('Components > TheHeader', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallowMount(TheHeader, {
+    wrapper = mount(TheHeader, {
       stubs: {
         RouterLink: RouterLinkStub,
       },

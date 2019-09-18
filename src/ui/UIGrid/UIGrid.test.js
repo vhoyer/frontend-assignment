@@ -1,11 +1,11 @@
 import UIGrid from './UIGrid.vue'
-import { shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 
 describe('UI > UIGrid', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallowMount(UIGrid)
+    wrapper = mount(UIGrid)
   })
 
   it('renders a div by default', () => {
