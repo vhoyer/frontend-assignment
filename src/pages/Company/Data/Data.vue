@@ -23,7 +23,7 @@
         v-ui:cell="6"
         v-ui:row="2"
         label="Company Spend"
-        rules="required|positive_number"
+        rules="required|min_value:0"
       >
         <UIInput
           v-model="company.spend"

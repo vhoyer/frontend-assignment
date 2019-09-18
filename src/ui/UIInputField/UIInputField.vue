@@ -17,14 +17,15 @@
 
 <script>
 import { ValidationProvider, extend } from 'vee-validate'
+import { required, min_value } from 'vee-validate/dist/rules'
 
 extend('required', {
-  validate: value => Boolean(value),
+  ...required,
   message: 'Please fill the {_field_} field',
 })
 
-extend('positive_number', {
-  validate: value => Number(value) >= 0,
+extend('min_value', {
+  ...min_value,
   message: 'Please insert a positive number in {_field_} field',
 })
 
