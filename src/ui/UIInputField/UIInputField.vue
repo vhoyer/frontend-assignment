@@ -17,9 +17,17 @@
 
 <script>
 import { ValidationProvider, extend } from 'vee-validate'
+
 extend('required', {
   validate: value => Boolean(value),
   message: 'Please fill the {_field_} field',
+})
+
+extend('positive_number', {
+  validate: value => {
+    return Number(value) >= 0
+  },
+  message: 'Please insert a positive number in {_field_} field',
 })
 
 export default {
