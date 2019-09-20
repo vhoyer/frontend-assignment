@@ -44,4 +44,15 @@ describe('UI > UIGrid', () => {
       expect(wrapper.classes('ui-grid--top')).toBe(false)
     })
   })
+
+  describe('when a tag prop is passed', () => {
+    beforeEach(() => {
+      wrapper.setProps({ tag: 'form' })
+    })
+
+    it('renders as the given property', () => {
+      expect(wrapper.is('div')).toBe(false)
+      expect(wrapper.is('form')).toBe(true)
+    })
+  })
 })

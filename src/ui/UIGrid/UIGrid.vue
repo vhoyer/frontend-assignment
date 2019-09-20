@@ -1,16 +1,21 @@
 <template>
-  <div
+  <component
+    :is="tag"
     class="ui-grid"
     :class="[marginClasses]"
   >
     <slot />
-  </div>
+  </component>
 </template>
 
 <script>
 export default {
   name: 'UIGrid',
   props: {
+    tag: {
+      type: String,
+      default: 'div',
+    },
     margins: {
       type: String,
       default: 'top bottom',
