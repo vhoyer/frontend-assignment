@@ -23,11 +23,10 @@
         v-ui:cell="6"
         v-ui:row="2"
         label="Company Spend"
-        rules="required|min_value:0"
       >
         <UIInput
-          v-model="company.spend"
           placeholder="e.g. $150,000"
+          @blur="onCompanySpendBlur"
         />
       </UIInputField>
 
@@ -81,5 +80,17 @@ export default {
   data: () => ({
     company: {},
   }),
+  methods: {
+    onCompanySpendBlur($event) {
+      const stripUnvalid = $event.target.value.replace(/[^.\d]/g, '')
+      this.company.spend = Number(stripUnvalid)
+
+      $event.target.value = '$' + this.company.spend.toLocaleString({
+        locale: 'us',
+        style: 'currency',
+        currency: 'USD',
+      })
+    },
+  },
 }
 </script>
