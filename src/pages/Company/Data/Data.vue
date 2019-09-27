@@ -31,13 +31,14 @@
       </UIInputField>
 
       <UIInputField
+        ref="spendAbility"
         v-ui:cell="6"
         v-ui:row="3"
         label="Company Spend Ability"
       >
         <UIInput
-          v-model="company.spandAbility"
           placeholder="e.g. $150,000 - $300,000"
+          @blur="updateSpendAbility"
         />
       </UIInputField>
 
@@ -82,7 +83,7 @@ export default {
   }),
   methods: {
     onCompanySpendBlur($event) {
-      const stripUnvalid = $event.target.value.replace(/[^.\d]/g, '')
+      const stripUnvalid = this.stripUnvalidNumericCharacters($event.target.value)
       this.company.spend = Number(stripUnvalid)
 
       $event.target.value = '$' + this.company.spend.toLocaleString({
@@ -90,6 +91,28 @@ export default {
         style: 'currency',
         currency: 'USD',
       })
+    },
+    stripUnvalidNumericCharacters(value) {
+      return value.replace(/[^.\d]/g, '')
+    },
+    updateSpendAbility($event) {
+      if (!$event.target.value) return
+
+      const { setErrors } = this.$refs.spendAbility
+      const [minimum, maximum] = $event.target.value.split(' - ')
+
+      const hasValidationError = minimum > maximum
+
+      if (hasValidationError) {
+        setErrors(["The first value shouldn't be greater than the second"])
+      } else {
+        setErrors([])
+      }
+
+      this.company.spendAbility = {
+        maximum,
+        minimum,
+      }
     },
   },
 }

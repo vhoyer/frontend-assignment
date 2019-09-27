@@ -1,5 +1,6 @@
 <template>
   <ValidationProvider
+    ref="validator"
     v-bind="$attrs"
     :name="label"
     tag="label"
@@ -37,6 +38,11 @@ export default {
     label: {
       type: String,
       default: undefined,
+    },
+  },
+  methods: {
+    setErrors() {
+      this.$refs.validator.setErrors(...arguments)
     },
   },
 }
