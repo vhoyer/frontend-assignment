@@ -2,6 +2,9 @@
   <input
     v-bind="$attrs"
     class="ui-input"
+    :class="{
+      'ui-input--error': error
+    }"
     v-on="listeners"
     @input="$emit('input', $event.target.value)"
     @blur="$emit('blur', $event)"
@@ -10,6 +13,12 @@
 
 <script>
 export default {
+  props: {
+    error: {
+      type: Boolean,
+      default: false,
+    },
+  },
   computed: {
     listeners() {
       const listeners = {...this.$listeners}
