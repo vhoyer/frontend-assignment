@@ -31,7 +31,12 @@
         />
       </UIGrid>
 
-      <slot :submit="submit" />
+      <slot
+        :submit="submit"
+        :focus-bindings="{
+          'data-ui-dialog-focus': true,
+        }"
+      />
     </UICard>
   </div>
 </template>
@@ -47,6 +52,10 @@ export default {
       type: String,
       required: true,
     },
+    originalFocus: {
+      type: Function,
+      required: true,
+    },
   },
   data: () => ({
     isActive: false,
@@ -58,8 +67,10 @@ export default {
     'isActive'(isActive) {
       if (isActive) {
         window.addEventListener('keydown', this.escHandling)
+        this.onOpen()
       } else {
         window.removeEventListener('keydown', this.escHandling)
+        this.onClose()
       }
     },
   },
@@ -78,6 +89,14 @@ export default {
       if (event.key !== 'Escape') return
 
       this.close()
+    },
+    onOpen() {
+      this.$nextTick(() => {
+        this.$el.querySelector('[data-ui-dialog-focus]').focus()
+      })
+    },
+    onClose() {
+      this.originalFocus().focus()
     },
   },
 }

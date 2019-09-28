@@ -53,23 +53,25 @@
         label="Notes"
       >
         <UITextarea
+          ref="notes"
           placeholder="e.g. Good Tech Company"
           rows="10"
           :value="company.notes"
-          @focus="$router.push({hash: 'aditional-notes'})"
+          @keydown="openNotesDialog"
         />
       </UIInputField>
 
       <UIDialog
+        :original-focus="() => $refs.notes.$el"
         title="Aditional Notes"
         url-hash="#aditional-notes"
-        #default="{ submit }"
+        #default="{ submit, focusBindings }"
       >
         <UITextarea
           v-model="company.notes"
           placeholder="e.g. Good Tech Company"
           rows="10"
-          @click="$router.push({hash: 'aditional-notes'})"
+          v-bind="focusBindings"
         />
 
         <UIButtonGroup>
@@ -150,6 +152,16 @@ export default {
         style: 'currency',
         currency: 'USD',
       })
+    },
+    openNotesDialog($event) {
+      const whitelist = [
+        'Alt', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowUp',
+        'Control', 'End', 'Home', 'Meta', 'PageDown', 'PageUp',
+        'Shift', 'Tab',
+      ]
+      if (whitelist.includes($event.key)) return
+
+      this.$router.push({hash: 'aditional-notes'})
     },
   },
 }
