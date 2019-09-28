@@ -8,3 +8,9 @@
   text-transform: uppercase;
   line-height: 1.8rem;
 }
+
+.ui-text--error {
+  color: var(--color-danger-pure);
+  font-size: var(--font-small);
+  line-height: 1.8rem;
+}
