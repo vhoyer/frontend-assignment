@@ -7,6 +7,8 @@ import * as companyStore from 'Store/company'
 import UIInputField from 'UI/UIInputField'
 import UIInput from 'UI/UIInput'
 import UIText from 'UI/UIText'
+import UITextarea from 'UI/UITextarea'
+import UIDialog from 'UI/UIDialog'
 
 const localVue = createLocalVue()
 localVue.use(VueRouter)
@@ -37,6 +39,10 @@ describe('Pages > Company Data', () => {
     expect(wrapper.findAll(UIInputField).length).toBe(4)
   })
 
+  it('starts with dialog closed', () => {
+    expect(wrapper.find(UIDialog).isVisible()).toBe(false)
+  })
+
   describe('when user focus on company name field', () => {
     const fieldCompanyName = () => wrapper.findAll(UIInputField).at(0)
 
@@ -64,7 +70,7 @@ describe('Pages > Company Data', () => {
         await flushPromises()
       })
 
-      xit('updates store value', () => {
+      it('updates store value', () => {
         expect(wrapper.vm.$store.state.company.name).toBe('Giggle')
       })
 
@@ -89,7 +95,7 @@ describe('Pages > Company Data', () => {
         await flushPromises()
       })
 
-      xit('updates store value', () => {
+      it('updates store value', () => {
         expect(wrapper.vm.$store.state.company.spend).toBe(1000)
       })
 
@@ -126,7 +132,7 @@ describe('Pages > Company Data', () => {
         expect(fieldCompanySpendAbility().find(UIInput).attributes('value')).toBe('$1,000 - $2,000')
       })
 
-      xit('updates store value', () => {
+      it('updates store value', () => {
         expect(wrapper.vm.$store.state.company.spendAbility).toEqual({
           maximum: 2000,
           minimum: 1000,
@@ -144,6 +150,32 @@ describe('Pages > Company Data', () => {
           expect(fieldCompanySpendAbility().findAll(UIText).length).toBe(2)
           expect(fieldCompanySpendAbility().findAll(UIText).at(1).text()).toBe("The first value shouldn't be greater than the second")
         })
+      })
+    })
+  })
+
+  describe('when user focus on company notes field', () => {
+    const fieldCompanyNote = () => wrapper.findAll(UIInputField).at(3)
+    const dialogCompanyNote = () => wrapper.find(UIDialog)
+
+    beforeEach(async () => {
+      fieldCompanyNote().find(UITextarea).trigger('focus')
+      await flushPromises()
+    })
+
+    it('opens dialog', () => {
+      expect(wrapper.find(UIDialog).isVisible()).toBe(true)
+    })
+
+    describe('when user types on the text read on dialog', () => {
+      beforeEach(async () => {
+        dialogCompanyNote().find(UITextarea).setValue('this is so much fun!!')
+        dialogCompanyNote().find(UITextarea).trigger('blur')
+        await flushPromises()
+      })
+
+      it('updates store value', () => {
+        expect(wrapper.vm.$store.state.company.notes).toEqual('this is so much fun!!')
       })
     })
   })
