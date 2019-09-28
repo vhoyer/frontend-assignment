@@ -1,10 +1,10 @@
-# Note from author :D
-
-I spend about 29 hours and a half to complete this challenge. I will not try to hide, I went crazy on it, if you read the requirements you will see I kinda did a lot more than needed, but I just couldn't help myself. I took the opportunity of the test to practice those new things I was learning about design systems and I think I did the best I could in there.
-
-That said, after the 24th hour I got a little tired of doing this test so I kinda rushed into doing the tests requirements, but I think in the end I managed to keep the quality of the code high enough it would survive a code review session :D. Hope you like my code and maybe draw some inspiration from it.
-
 # Intricately Front-End Challenge
+
+> **Note from author :D**
+>
+> I spend about 29 hours and a half to complete this challenge. I will not try to hide, I went crazy on it, if you read the requirements you will see I kinda did a lot more than needed, but I just couldn't help myself. I took the opportunity of the test to practice those new things I was learning about design systems and I think I did the best I could in there.
+> 
+> That said, after the 24th hour I got a little tired of doing this test so I kinda rushed into doing the tests requirements, but I think in the end I managed to keep the quality of the code high enough it would survive a code review session :D. Hope you like my code and maybe draw some inspiration from it.
 
 Requirements and design mocks are available [here](https://docs.google.com/document/d/1B3ofnK0Nc2Dawtpj1fLky9ekzqjjri_EjDXQv8Nmpiw/edit#heading=h.rmoqo627p0vn). But a here is a summary:
 ## Project Specifications
