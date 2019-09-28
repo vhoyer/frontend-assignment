@@ -6,7 +6,9 @@
 > 
 > That said, after the 24th hour I got a little tired of doing this test so I kinda rushed into doing the tests requirements, but I think in the end I managed to keep the quality of the code high enough it would survive a code review session :D. Hope you like my code and maybe draw some inspiration from it.
 >
-> For this project I made a `UI` folder that contains a rough design system I designed based on my experience.
+> Things I understande as worth mentioning:
+> - For this project I made a `UI` folder that contains a rough design system I designed based on my experience.
+> - If wanna know how much I care to commit messages, you can see this repo or my personal [dotfiles](https://github.com/vhoyer/dotfiles/tree/i3-zsh).
 
 Requirements and design mocks are available [here](https://docs.google.com/document/d/1B3ofnK0Nc2Dawtpj1fLky9ekzqjjri_EjDXQv8Nmpiw/edit#heading=h.rmoqo627p0vn). But a here is a summary:
 ## Project Specifications
