@@ -91,7 +91,9 @@ export default {
       if (!$event.target.value) return
 
       const { setErrors } = this.$refs.spendAbility
-      const [minimum, maximum] = $event.target.value.split(/\s*-\s*/)
+      const { target: { value } } = $event
+
+      const [minimum, maximum] = value.split(/\s*-\s*/).map(this.forceNumber)
 
       const hasValidationError = minimum > maximum
 
