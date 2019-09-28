@@ -27,6 +27,7 @@
         label="Company Spend"
       >
         <UIInput
+          :value="companySpendDisplay"
           placeholder="e.g. $150,000"
           @blur="onCompanySpendBlur"
         />
@@ -40,6 +41,7 @@
         #default="{ hasError }"
       >
         <UIInput
+          :value="companySpendAbilityDisplay"
           :error="hasError"
           placeholder="e.g. $150,000 - $300,000"
           @blur="updateSpendAbility"
@@ -85,11 +87,30 @@ export default {
   data: () => ({
     company: {},
   }),
+  computed: {
+    companySpendDisplay() {
+      if (this.company.spend) {
+        return this.formatCurrency(this.company.spend)
+      } else {
+        return ''
+      }
+    },
+    companySpendAbilityDisplay() {
+      if (this.company.spendAbility) {
+        const { minimum, maximum } = this.company.spendAbility
+
+        return `${this.formatCurrency(minimum)} - ${this.formatCurrency(maximum)}`
+      } else {
+        return ''
+      }
+    },
+  },
   methods: {
     onCompanySpendBlur($event) {
-      this.company.spend = this.forceNumber($event.target.value)
-
-      $event.target.value = this.formatCurrency(this.company.spend)
+      this.company = {
+        ...this.company,
+        spend: this.forceNumber($event.target.value),
+      }
     },
     updateSpendAbility($event) {
       if (!$event.target.value) return
@@ -97,7 +118,9 @@ export default {
       const { setErrors } = this.$refs.spendAbility
       const { target: { value } } = $event
 
-      const [minimum, maximum] = value.split(/\s*-\s*/).map(this.forceNumber)
+      let [minimum, maximum] = value.split(/\s*-\s*/).map(this.forceNumber)
+      minimum = minimum || 0
+      maximum = maximum || 0
 
       const hasValidationError = minimum > maximum
 
@@ -107,9 +130,12 @@ export default {
         setErrors([])
       }
 
-      this.company.spendAbility = {
-        maximum,
-        minimum,
+      this.company = {
+        ...this.company,
+        spendAbility: {
+          maximum,
+          minimum,
+        },
       }
     },
     forceNumber(value) {
