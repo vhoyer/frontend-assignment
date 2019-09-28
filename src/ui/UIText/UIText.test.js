@@ -51,4 +51,28 @@ describe('UI > UIText', () => {
       expect(wrapper.attributes('class')).toBe('ui-text ui-text--small')
     })
   })
+
+  describe('when a variant is passed to it', () => {
+    beforeEach(() => {
+      wrapper.setProps({
+        variant: 'caption',
+      })
+    })
+
+    it('renders the right classes', () => {
+      expect(wrapper.attributes('class')).toBe('ui-text ui-text--caption')
+    })
+  })
+
+  describe('when error is passed as true to it', () => {
+    beforeEach(() => {
+      wrapper.setProps({
+        error: true,
+      })
+    })
+
+    it('renders the right classes', () => {
+      expect(wrapper.attributes('class')).toBe('ui-text ui-text--error')
+    })
+  })
 })

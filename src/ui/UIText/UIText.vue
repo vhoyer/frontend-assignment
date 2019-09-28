@@ -3,8 +3,9 @@
     :is="tag"
     class="ui-text"
     :class="{
+      'ui-text--error': error,
       [`ui-text--${size}`]: size !== 'inherit',
-      [`ui-text--${type}`]: type !== 'default',
+      [`ui-text--${variant}`]: variant !== 'default',
     }"
   >
     <slot />
@@ -29,9 +30,13 @@ export default {
         'large',
       ].includes(value),
     },
-    type: {
+    variant: {
       type: String,
       default: 'default',
+    },
+    error: {
+      type: Boolean,
+      default: false,
     },
   },
 }
