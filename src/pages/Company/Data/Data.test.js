@@ -35,6 +35,10 @@ describe('Pages > Company Data', () => {
     })
   })
 
+  afterEach(() => {
+    router.push({ hash: '' }).catch(() => {})
+  })
+
   it('shows company fields', () => {
     expect(wrapper.findAll(UIInputField).length).toBe(4)
   })

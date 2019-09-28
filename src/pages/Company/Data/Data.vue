@@ -83,34 +83,38 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
+
 export default {
-  data: () => ({
-    company: {},
-  }),
   computed: {
+    ...mapState([
+      'company',
+    ]),
     companySpendDisplay() {
-      if (this.company.spend) {
-        return this.formatCurrency(this.company.spend)
-      } else {
+      if (!this.company.spend) {
         return ''
       }
+
+      return this.formatCurrency(this.company.spend)
     },
     companySpendAbilityDisplay() {
-      if (this.company.spendAbility) {
-        const { minimum, maximum } = this.company.spendAbility
+      const { minimum, maximum } = this.company.spendAbility
 
-        return `${this.formatCurrency(minimum)} - ${this.formatCurrency(maximum)}`
-      } else {
+      if (!minimum || !maximum) {
         return ''
       }
+
+      return `${this.formatCurrency(minimum)} - ${this.formatCurrency(maximum)}`
     },
   },
   methods: {
+    ...mapMutations('company', [
+      'assignCompany',
+    ]),
     onCompanySpendBlur($event) {
-      this.company = {
-        ...this.company,
+      this.assignCompany({
         spend: this.forceNumber($event.target.value),
-      }
+      })
     },
     updateSpendAbility($event) {
       if (!$event.target.value) return
@@ -130,13 +134,12 @@ export default {
         setErrors([])
       }
 
-      this.company = {
-        ...this.company,
+      this.assignCompany({
         spendAbility: {
           maximum,
           minimum,
         },
-      }
+      })
     },
     forceNumber(value) {
       return Number(value.replace(/[^.\d]/g, ''))
