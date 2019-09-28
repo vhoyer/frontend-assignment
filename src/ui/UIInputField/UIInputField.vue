@@ -7,12 +7,22 @@
     class="ui-input-field"
     #default="{ errors }"
   >
-    <UIText type="caption">
+    <UIText
+      variant="caption"
+      :error="!!errors.length"
+    >
       {{ label }}
     </UIText>
 
-    <slot />
-    {{ errors[0] }}
+    <slot :has-error="!!errors.length" />
+
+    <UIText
+      v-if="errors.length"
+      size="small"
+      error
+    >
+      {{ errors[0] }}
+    </UIText>
   </ValidationProvider>
 </template>
 

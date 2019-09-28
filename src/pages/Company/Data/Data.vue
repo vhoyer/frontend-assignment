@@ -12,9 +12,11 @@
         v-ui:cell="6"
         label="Company Name"
         rules="required"
+        #default="{ hasError }"
       >
         <UIInput
           v-model="company.name"
+          :error="hasError"
           placeholder="e.g. Your Company Name"
         />
       </UIInputField>
@@ -23,8 +25,10 @@
         v-ui:cell="6"
         v-ui:row="2"
         label="Company Spend"
+        #default="{ hasError }"
       >
         <UIInput
+          :error="hasError"
           placeholder="e.g. $150,000"
           @blur="onCompanySpendBlur"
         />
@@ -35,8 +39,10 @@
         v-ui:cell="6"
         v-ui:row="3"
         label="Company Spend Ability"
+        #default="{ hasError }"
       >
         <UIInput
+          :error="hasError"
           placeholder="e.g. $150,000 - $300,000"
           @blur="updateSpendAbility"
         />
