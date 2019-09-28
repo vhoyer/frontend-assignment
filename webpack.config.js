@@ -26,6 +26,7 @@ module.exports = {
       Pages: path.resolve(__dirname, 'src', 'pages'),
       Components: path.resolve(__dirname, 'src', 'components'),
       UI: path.resolve(__dirname, 'src', 'ui'),
+      Utils: path.resolve(__dirname, 'src', 'utils'),
       Directives: path.resolve(__dirname, 'src', 'directives'),
       Filters: path.resolve(__dirname, 'src', 'filters'),
       Images: path.resolve(__dirname, 'src', 'images'),
