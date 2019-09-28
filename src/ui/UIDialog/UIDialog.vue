@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="isActive"
+    v-show="isActive"
     class="ui-dialog"
     role="dialog"
     aria-modal="true"

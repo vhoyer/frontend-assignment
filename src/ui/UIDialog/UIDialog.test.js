@@ -33,7 +33,7 @@ describe('UI > UIDialog', () => {
   })
 
   it('starts closed', () => {
-    expect(wrapper.isEmpty()).toBe(true)
+    expect(wrapper.isVisible()).toBe(false)
   })
 
   describe('when route hash is set to a different hash than urlHash', () => {
@@ -42,7 +42,7 @@ describe('UI > UIDialog', () => {
     })
 
     it('keeps closed', () => {
-      expect(wrapper.isEmpty()).toBe(true)
+      expect(wrapper.isVisible()).toBe(false)
     })
   })
 
@@ -52,7 +52,7 @@ describe('UI > UIDialog', () => {
     })
 
     it('is active', () => {
-      expect(wrapper.isEmpty()).toBe(false)
+      expect(wrapper.isVisible()).toBe(true)
     })
 
     it('sets title to the value passed', () => {
@@ -69,7 +69,7 @@ describe('UI > UIDialog', () => {
       })
 
       it('closes again', () => {
-        expect(wrapper.isEmpty()).toBe(true)
+        expect(wrapper.isVisible()).toBe(false)
       })
     })
 
@@ -79,7 +79,7 @@ describe('UI > UIDialog', () => {
       })
 
       it('closes', () => {
-        expect(wrapper.isEmpty()).toBe(true)
+        expect(wrapper.isVisible()).toBe(false)
       })
 
       it('clears hash', () => {
@@ -93,7 +93,7 @@ describe('UI > UIDialog', () => {
       })
 
       it('closes', () => {
-        expect(wrapper.isEmpty()).toBe(true)
+        expect(wrapper.isVisible()).toBe(false)
       })
 
       it('clears hash', () => {
@@ -112,7 +112,7 @@ describe('UI > UIDialog', () => {
       })
 
       it('closes the dialog', () => {
-        expect(wrapper.isEmpty()).toBe(true)
+        expect(wrapper.isVisible()).toBe(false)
       })
 
       it('clears hash', () => {
@@ -139,7 +139,7 @@ describe('UI > UIDialog', () => {
     })
 
     it('opens', () => {
-      expect(wrapper.isEmpty()).toBe(false)
+      expect(wrapper.isVisible()).toBe(true)
     })
   })
 })
