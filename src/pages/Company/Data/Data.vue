@@ -25,10 +25,8 @@
         v-ui:cell="6"
         v-ui:row="2"
         label="Company Spend"
-        #default="{ hasError }"
       >
         <UIInput
-          :error="hasError"
           placeholder="e.g. $150,000"
           @blur="onCompanySpendBlur"
         />
