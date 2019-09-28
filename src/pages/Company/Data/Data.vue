@@ -83,17 +83,9 @@ export default {
   }),
   methods: {
     onCompanySpendBlur($event) {
-      const stripUnvalid = this.stripUnvalidNumericCharacters($event.target.value)
-      this.company.spend = Number(stripUnvalid)
+      this.company.spend = this.forceNumber($event.target.value)
 
-      $event.target.value = '$' + this.company.spend.toLocaleString({
-        locale: 'us',
-        style: 'currency',
-        currency: 'USD',
-      })
-    },
-    stripUnvalidNumericCharacters(value) {
-      return value.replace(/[^.\d]/g, '')
+      $event.target.value = this.formatCurrency(this.company.spend)
     },
     updateSpendAbility($event) {
       if (!$event.target.value) return
@@ -113,6 +105,16 @@ export default {
         maximum,
         minimum,
       }
+    },
+    forceNumber(value) {
+      return Number(value.replace(/[^.\d]/g, ''))
+    },
+    formatCurrency(value) {
+      return '$' + Number(value).toLocaleString({
+        locale: 'us',
+        style: 'currency',
+        currency: 'USD',
+      })
     },
   },
 }
