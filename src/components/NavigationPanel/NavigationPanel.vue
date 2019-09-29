@@ -33,9 +33,9 @@ export default {
     recursiveChildrenSearch(routes, name, parent) {
       for (let route of routes) {
         if (route.name === name)
-          return parent ? parent.children : routes;
+          return parent ? parent.children : routes
         else if (route.children)
-          return this.recursiveChildrenSearch(route.children, name, route);
+          return this.recursiveChildrenSearch(route.children, name, route)
       }
     }
   },

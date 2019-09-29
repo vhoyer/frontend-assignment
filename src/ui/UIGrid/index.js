@@ -5,4 +5,4 @@ export { default } from './UIGrid.vue'
 export {
   cell,
   row,
-};
+}

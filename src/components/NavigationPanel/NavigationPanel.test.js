@@ -26,7 +26,7 @@ const localVue = createLocalVue()
 localVue.use(VueRouter)
 const router = new VueRouter({
   routes,
-});
+})
 
 describe('Components > NavigationPanel', () => {
   let wrapper

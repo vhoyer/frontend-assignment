@@ -17,7 +17,7 @@ describe('UI > UIButton', () => {
   })
 
   it('renders text passed to slot', () => {
-    expect(wrapper.text()).toBe('Pegasasu no fantaji! Sousa yume dake ha');
+    expect(wrapper.text()).toBe('Pegasasu no fantaji! Sousa yume dake ha')
   })
 
   it('renders button with type="button" by default', () => {
