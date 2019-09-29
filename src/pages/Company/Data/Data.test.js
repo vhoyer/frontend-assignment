@@ -167,19 +167,45 @@ describe('Pages > Company Data', () => {
       await flushPromises()
     })
 
-    it('opens dialog', () => {
-      expect(wrapper.find(UIDialog).isVisible()).toBe(true)
+    it('does not open dialog', () => {
+      expect(wrapper.find(UIDialog).isVisible()).toBe(false)
     })
 
-    describe('when user types on the text read on dialog', () => {
+    describe('when user types something in the company notes field', () => {
       beforeEach(async () => {
-        dialogCompanyNote().find(UITextarea).setValue('this is so much fun!!')
-        dialogCompanyNote().find(UITextarea).trigger('blur')
+        fieldCompanyNote().find(UITextarea).trigger('keydown', {
+          key: 'a',
+        })
         await flushPromises()
       })
 
-      it('updates store value', () => {
-        expect(wrapper.vm.$store.state.company.notes).toEqual('this is so much fun!!')
+      it('opens dialog', () => {
+        expect(wrapper.find(UIDialog).isVisible()).toBe(true)
+      })
+
+      describe('when user types on the text read on dialog', () => {
+        beforeEach(async () => {
+          dialogCompanyNote().find(UITextarea).setValue('this is so much fun!!')
+          dialogCompanyNote().find(UITextarea).trigger('blur')
+          await flushPromises()
+        })
+
+        it('updates store value', () => {
+          expect(wrapper.vm.$store.state.company.notes).toEqual('this is so much fun!!')
+        })
+      })
+    })
+
+    describe('when user presses Tab while focused on the company notes field', () => {
+      beforeEach(async () => {
+        fieldCompanyNote().find(UITextarea).trigger('keydown', {
+          key: 'Tab',
+        })
+        await flushPromises()
+      })
+
+      it('does not open dialog', () => {
+        expect(wrapper.find(UIDialog).isVisible()).toBe(false)
       })
     })
   })
