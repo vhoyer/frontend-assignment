@@ -17,6 +17,7 @@ describe('UI > UIDialog', () => {
       propsData: {
         title: "That's the dialog title",
         urlHash: '#yup-thats-me',
+        originalFocus: () => ({ focus: jest.fn(), }),
       },
       scopedSlots: {
         default: '<button id="btn" @click="props.submit(1)">content being rendered</button>',
@@ -131,6 +132,7 @@ describe('UI > UIDialog', () => {
         propsData: {
           title: "That's the dialog title",
           urlHash: '#yup-thats-me',
+          originalFocus: () => ({ focus: jest.fn(), }),
         },
         scopedSlots: {
           default: '<button id="btn" @click="props.submit(1)">content being rendered</button>',

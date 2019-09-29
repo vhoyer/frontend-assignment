@@ -92,7 +92,11 @@ export default {
     },
     onOpen() {
       this.$nextTick(() => {
-        this.$el.querySelector('[data-ui-dialog-focus]').focus()
+        const dialogInitialFocus = this.$el.querySelector('[data-ui-dialog-focus]')
+
+        if (dialogInitialFocus) {
+          dialogInitialFocus.focus()
+        }
       })
     },
     onClose() {
