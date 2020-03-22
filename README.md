@@ -8,7 +8,7 @@
 >
 > Things I understande as worth mentioning:
 > - For this project I made a `UI` folder that contains a rough design system I designed based on my experience.
-> - If wanna know how much I care to commit messages, you can see this repo or my personal [dotfiles](https://github.com/vhoyer/dotfiles/tree/i3-zsh).
+> - If wanna know how much I care to commit messages, you can see this repo or my personal [dotfiles](https://github.com/vhoyer/dotfiles/).
 > - I'm happy with the coverage I got (print at the end of the file).
 
 Requirements and design mocks are available [here](https://docs.google.com/document/d/1B3ofnK0Nc2Dawtpj1fLky9ekzqjjri_EjDXQv8Nmpiw/edit#heading=h.rmoqo627p0vn). But a here is a summary:
